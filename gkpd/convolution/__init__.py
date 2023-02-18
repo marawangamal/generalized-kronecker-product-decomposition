@@ -1,1 +1,1 @@
-from kroneckersumconv2d import KroneckerConv2d
+from .kroneckerconv2d import KroneckerConv2d

@@ -144,8 +144,8 @@ class KroneckerConv2d(DecomposedLayer, ABC):
         b_dims = KroneckerConv2d._get_b_dims(in_channels, out_channels, kernel_size, a_dims)
         a_hat, b_hat = gkpd(w, base_layer.weight, a_dims, b_dims)  # [rank, *a_dims]
 
-        obj = KroneckerConv2d(in_channels=in_channels, out_channels=out_channels, kernel_size, stride=stride,
-                              padding=padding, dilation=dilation, a_dims=a_dims, bias=bias, rank=rank)
+        obj = KroneckerConv2d(in_channels=in_channels, out_channels=out_channels, kernel_size=kernel_size,
+                              stride=stride, padding=padding, dilation=dilation, a_dims=a_dims, bias=bias, rank=rank)
         obj._update_weights(a_hat, b_hat)
         return obj
 
